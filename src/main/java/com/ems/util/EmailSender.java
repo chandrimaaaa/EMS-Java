@@ -11,8 +11,7 @@ public class EmailSender {
     private static final String SENDER_EMAIL = ConfigUtil.get("EMAIL_USER");
     private static final String SENDER_PASSWORD = ConfigUtil.get("EMAIL_PASS"); 
 
-    public static void sendCredentialsEmail(String recipientEmail, String employeeName, String assignedId, String assignedPassword) {
-        // Run in an independent background execution thread to keep UI responses instant
+    public static void sendCredentialsEmail(String recipientEmail, String employeeName, String username, String assignedPassword) {
         new Thread(() -> {
             Properties props = new Properties();
             props.put("mail.smtp.auth", "true");
@@ -37,7 +36,7 @@ public class EmailSender {
                         + "<p>An administrative profile has been compiled for you within our Employee Management System.</p>"
                         + "<p><strong>Your System Login Account Credentials:</strong></p>"
                         + "<ul>"
-                        + "<li><strong>User ID / Employee ID:</strong> " + assignedId + "</li>"
+                        + "<li><strong>User ID:</strong> " + username + "</li>"
                         + "<li><strong>Temporary Password:</strong> " + assignedPassword + "</li>"
                         + "</ul>"
                         + "<br><p><em>Please secure these credentials safely.</em></p>";

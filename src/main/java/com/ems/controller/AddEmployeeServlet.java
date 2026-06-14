@@ -46,7 +46,7 @@ public class AddEmployeeServlet extends HttpServlet {
             int result = ps.executeUpdate();
 
             if (result > 0) {
-                EmailSender.sendCredentialsEmail(email, name, autoId, autoPassword);
+                EmailSender.sendCredentialsEmail(email, name, username, autoPassword);
 
                 String flashMsg = URLEncoder.encode("Employee " + name + " provisioned successfully under ID: " + autoId, "UTF-8");
                 response.sendRedirect("AdminDashboardServlet?success=" + flashMsg);

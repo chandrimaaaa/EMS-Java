@@ -71,7 +71,7 @@
                                 <td><strong style="color: var(--md-primary);"><%= emp.getEmpId() %></strong></td>
                                 <td><%= emp.getName() %></td>
                                 <td><%= emp.getDepartment() %></td>
-                                <td>$<%= String.format("%.2f", emp.getSalary()) %></td>
+                                <td>₹<%= String.format("%.2f", emp.getSalary()) %></td>
                                 <td><%= emp.getEmail() %></td>
                                 <td style="text-align: right;">
                                     <a href="UpdateEmployeeServlet?action=edit&id=<%= emp.getEmpId() %>" class="md-btn md-btn-text" style="padding: 0 8px; min-width: auto; margin-right: 8px;">Edit</a>
