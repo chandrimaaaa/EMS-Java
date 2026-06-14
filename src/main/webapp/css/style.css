@@ -1,0 +1,250 @@
+/* Google Material Design Variables & Reset */
+:root {
+    --md-primary: #6200ee;
+    --md-primary-variant: #3700b3;
+    --md-secondary: #03dac6;
+    --md-background: #f5f5f7;
+    --md-surface: #ffffff;
+    --md-error: #b00020;
+    --md-on-primary: #ffffff;
+    --md-on-surface: #212121;
+    --md-on-surface-variant: #666666;
+    --shadow-1dp: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    --shadow-4dp: 0 4px 5px 0 rgba(0,0,0,0.14), 0 1px 10px 0 rgba(0,0,0,0.12), 0 2px 4px -1px rgba(0,0,0,0.2);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', 'Segoe UI', system-ui, sans-serif;
+}
+
+body {
+    background-color: var(--md-background);
+    color: var(--md-on-surface);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Navigation Bar */
+.md-appbar {
+    background-color: var(--md-primary);
+    color: var(--md-on-primary);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow-4dp);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.md-appbar h1 {
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+}
+
+.md-logout-btn {
+    color: var(--md-on-primary);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    border: 1px solid rgba(255,255,255,0.5);
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.md-logout-btn:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Layout Framework Container */
+.md-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 32px auto;
+    padding: 0 24px;
+}
+
+/* Material Floating Cards */
+.md-card {
+    background: var(--md-surface);
+    border-radius: 8px;
+    box-shadow: var(--shadow-1dp);
+    padding: 24px;
+    margin-bottom: 24px;
+}
+
+.md-card-title {
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 24px;
+    color: var(--md-on-surface);
+}
+
+/* Alert Notification Banner / Toasts */
+.md-alert {
+    padding: 14px 16px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.md-alert-success {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-left: 4px solid #2e7d32;
+}
+.md-alert-error {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left: 4px solid #c62828;
+}
+
+/* Form Styling Architecture */
+.md-form-group {
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.md-label {
+    display: block;
+    font-size: 12px;
+    color: var(--md-primary);
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.md-input, .md-select {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
+    background: transparent;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.md-input:focus, .md-select:focus {
+    border-color: var(--md-primary);
+    box-shadow: 0 0 0 1px var(--md-primary);
+}
+
+/* Interaction Button Components */
+.md-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+    height: 36px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1.25px;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+}
+
+.md-btn-primary {
+    background-color: var(--md-primary);
+    color: var(--md-on-primary);
+    box-shadow: var(--shadow-1dp);
+}
+.md-btn-primary:hover {
+    background-color: var(--md-primary-variant);
+    box-shadow: var(--shadow-4dp);
+}
+
+.md-btn-secondary {
+    background-color: var(--md-secondary);
+    color: #000;
+}
+
+.md-btn-text {
+    background: transparent;
+    color: var(--md-primary);
+}
+.md-btn-text:hover {
+    background: rgba(98, 0, 238, 0.04);
+}
+
+/* Material Custom Data Tables */
+.md-table-container {
+    width: 100%;
+    overflow-x: auto;
+    background: var(--md-surface);
+    border-radius: 8px;
+    box-shadow: var(--shadow-1dp);
+}
+
+.md-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.md-table th {
+    background-color: #fafafa;
+    color: var(--md-on-surface-variant);
+    font-weight: 500;
+    font-size: 12px;
+    padding: 16px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+    text-transform: uppercase;
+}
+
+.md-table th a {
+    color: var(--md-on-surface);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.md-table td {
+    padding: 16px;
+    font-size: 14px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    color: var(--md-on-surface);
+}
+
+.md-table tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Functional Pagination Layout */
+.md-pagination {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 12px 24px;
+    background: var(--md-surface);
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
+    gap: 16px;
+    font-size: 12px;
+    color: var(--md-on-surface-variant);
+}
+
+.md-page-link {
+    color: var(--md-primary);
+    text-decoration: none;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 8px;
+}
+.md-page-link.disabled {
+    color: #cccccc;
+    pointer-events: none;
+}
